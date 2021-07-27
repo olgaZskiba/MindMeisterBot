@@ -1,6 +1,6 @@
-package by.integrator.mind_meister_bot.repository;
+package by.integrator.mind_meister_bot.bot.repository;
 
-import by.integrator.mind_meister_bot.bean.Profile;
+import by.integrator.mind_meister_bot.bot.bean.Profile;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

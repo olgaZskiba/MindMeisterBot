@@ -1,4 +1,4 @@
-package by.integrator.mind_meister_bot.bean;
+package by.integrator.mind_meister_bot.bot.bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
