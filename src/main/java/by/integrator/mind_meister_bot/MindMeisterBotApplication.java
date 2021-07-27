@@ -2,13 +2,13 @@ package by.integrator.mind_meister_bot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-//import org.telegram.telegrambots.ApiContextInitializer;
+import org.telegram.telegrambots.ApiContextInitializer;
 
 @SpringBootApplication
 public class MindMeisterBotApplication {
 
     public static void main(String[] args) {
-//        ApiContextInitializer.init();
+        ApiContextInitializer.init();
         SpringApplication.run(MindMeisterBotApplication.class, args);
     }
 }
