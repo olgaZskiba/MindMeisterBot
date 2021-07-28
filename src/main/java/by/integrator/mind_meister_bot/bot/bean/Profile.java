@@ -1,5 +1,6 @@
 package by.integrator.mind_meister_bot.bot.bean;
 
+import by.integrator.mind_meister_bot.bot.states.ProfileBotState;
 import lombok.*;
 
 import javax.persistence.*;
@@ -15,11 +16,10 @@ import java.util.Set;
 @Table(name = "user_profile")
 public class Profile implements Serializable {
 
-    public Profile(Long chatId, String userName, Integer amount, Double percentage) {
+    public Profile(Long chatId, String userName) {
         this.chatId = chatId;
         this.userName = userName;
-//        this.amount = amount;
-//        this.percentage = percentage;
+
     }
 
     @Id
@@ -33,6 +33,10 @@ public class Profile implements Serializable {
     @Column(name = "active")
     private Boolean active;
 
+    @Column(name = "TeacherBotState", nullable = false)
+    @Enumerated(EnumType.ORDINAL)
+    private ProfileBotState profileBotState;
+
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "profile_role", joinColumns = @JoinColumn(name = "id_profile"))
     @Enumerated(EnumType.STRING)
@@ -44,8 +48,8 @@ public class Profile implements Serializable {
     @Column(name = "username")
     private String userName;
 
-//    @Column(name = "amount", columnDefinition = "0")
-//    private Integer amount;
+    @Column(name = "amount")
+    private Integer amount;
 //
 //    @Column(name = "percentage", columnDefinition = "0.0")
 //    private Double percentage;
