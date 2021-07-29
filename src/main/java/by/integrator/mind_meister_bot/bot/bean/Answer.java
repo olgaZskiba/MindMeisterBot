@@ -27,9 +27,9 @@ public class Answer implements Serializable {
     @JoinColumn(name = "profile_id", nullable = false)
     private Profile profile;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    /*@ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "question_id", nullable = false)
-    private Question question;
+    private Question question;*/
 
 
 

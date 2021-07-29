@@ -33,7 +33,7 @@ public class Profile implements Serializable {
     @Column(name = "active")
     private Boolean active;
 
-    @Column(name = "TeacherBotState", nullable = false)
+    @Column(name = "profileBotState", nullable = false)
     @Enumerated(EnumType.ORDINAL)
     private ProfileBotState profileBotState;
 
@@ -49,7 +49,7 @@ public class Profile implements Serializable {
     private String userName;
 
     @Column(name = "amount")
-    private Integer amount;
+    private Long amount;
 //
 //    @Column(name = "percentage", columnDefinition = "0.0")
 //    private Double percentage;

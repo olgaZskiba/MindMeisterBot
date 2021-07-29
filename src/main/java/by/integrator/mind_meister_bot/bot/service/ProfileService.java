@@ -21,9 +21,13 @@ public class ProfileService {
     public Profile createProfile(Update update) {
         return Profile.builder()
                 .chatId(update.getMessage().getChatId())
-                .userName(update.getMessage().getContact().getFirstName())
+                //.userName(update.getMessage().getContact().getFirstName())
                 .profileBotState(ProfileBotState.getInitialState())
-                .amount(0)
+                .amount(0L)
                 .build();
+    }
+
+    public void save(Profile profile) {
+        profileRepository.save(profile);
     }
 }

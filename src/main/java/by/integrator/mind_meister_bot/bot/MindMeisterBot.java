@@ -1,5 +1,6 @@
 package by.integrator.mind_meister_bot.bot;
 
+import by.integrator.mind_meister_bot.bot.handler.ProfileCommandHandler;
 import by.integrator.mind_meister_bot.bot.service.MessageService;
 import by.integrator.mind_meister_bot.bot.service.SendBotMessageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,9 @@ public class MindMeisterBot extends TelegramLongPollingBot {
     @Autowired
     MessageService messageService;
 
+    @Autowired
+    ProfileCommandHandler profileCommandHandler;
+
 //    @Autowired
 //    public MindMeisterBot(SendBotMessageService sendBotMessageService) {
 //        this.sendBotMessageService = sendBotMessageService;
@@ -34,12 +38,13 @@ public class MindMeisterBot extends TelegramLongPollingBot {
 
     @Override
     public void onUpdateReceived(Update update) {
-        SendMessage sendMessage = messageService.getMessage(update);
+        profileCommandHandler.handle(update);
+        /*SendMessage sendMessage = messageService.getMessage(update);
         try {
             execute(sendMessage);
         } catch (TelegramApiException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     @Override

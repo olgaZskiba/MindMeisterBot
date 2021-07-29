@@ -11,10 +11,12 @@ public class SendBotMessageServiceImp implements SendBotMessageService{
 
     private final MindMeisterBot mindMeisterBot;
 
-    @Autowired
+
     public SendBotMessageServiceImp(MindMeisterBot mindMeisterBot) {
         this.mindMeisterBot = mindMeisterBot;
     }
+
+
 
     @Override
     public void sendMessage(String chatId, String message) {
